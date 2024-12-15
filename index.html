@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List Manager</title>
+    <link rel="stylesheet" href="https://unpkg.com/tabulator-tables@5.5.1/dist/css/tabulator.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-gray-500 p-6">
+    <div class="max-w-5xl mx-auto bg-gray-300 p-6 rounded shadow-xl">
+        <h1 class="text-center text-green-500 text-5xl font-bold m-8">TASK LIST MANAGER</h1>
+
+        <!-- Add task form -->
+        <form id="task-form" class="flex items-center gap-4 mb-6">
+            <input class="border p-2 shadow-xl w-full" type="text" id="title" placeholder="Title">
+            <input class="border p-2 shadow-xl w-full" type="text" id="description" placeholder="Description">
+            <select id="status" class="border p-2 rounded shadow-xl">
+                <option value="To Do">To Do</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Done">Done</option>
+            </select>
+            <button type="submit" class="bg-blue-500 p-3 rounded-lg bg-green-500">Add Task</button>
+        </form>
+
+        <!-- Filter and Search -->
+        <div class="flex justify-between items-center mb-4">
+            <select id="status-filter" class="border p-2 shadow-xl">
+                <option value="">All</option>
+                <option value="To Do">To Do</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Done">Done</option>
+            </select>
+            <input type="text" id="search" placeholder="search tasks..." class="border p-2 shadow-xl w-1/2">
+        </div>
+
+        <!-- Task Counter -->
+        <div class="flex gap-6 mb-4">
+            <p class="text-red-700">To Do: <span id="todo-count">0</span></p>
+            <p class="text-orange-400">In Progress: <span id="in-progress-count">0</span></p>
+            <p class="text-green-500">Done: <span id="done-count">0</span></p>
+        </div>
+
+        <!-- Task Table -->
+         <div id="task-table" class="border rounded-lg"></div>
+    </div>
+
+    <script src="https://unpkg.com/tabulator-tables@5.5.1/dist/js/tabulator.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
